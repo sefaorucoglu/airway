@@ -15,7 +15,7 @@ public class Flight {
     private String boardingTime;
     private String landingTime;
     @Enumerated(EnumType.ORDINAL)
-    private String Status;
+    private Status Status;
 
 
 
