@@ -12,6 +12,6 @@ public interface BookingService {
     Optional<BookingResponse> createBooking(AddBookingRequest request);
     Optional<BookingResponse> removeBookingById(String id);
     Optional<BookingResponse> updateBooking(UpdateBookingRequest updateRequest);
-    List<BookingResponse> findCompany(GetInformationBookingRequest request);
+    List<BookingResponse> findBooking(GetInformationBookingRequest request);
     List<BookingResponse> findAll (int pageNo, int pageSize);
 }
