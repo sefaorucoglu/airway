@@ -6,7 +6,9 @@ import dto.request.passenger.UpdatePassengerRequest;
 import dto.response.passenger.PassengerResponse;
 import exception.PassengerNotFoundException;
 import jakarta.validation.Valid;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.context.annotation.RequestScope;
@@ -51,5 +53,13 @@ public class PassengerController {
         return passengerService.findPassenger(request);
     }
 
+    @GetMapping
+    public List<PassengerResponse> findAll(@RequestParam(defaultValue = "0", required = false) int pageNo, @RequestParam(defaultValue = "20",required = false) int pageSize){
+        return passengerService.findAll(pageNo, pageSize);
+    }
 
+    @ExceptionHandler(value = PassengerNotFoundException.class)
+    public ResponseEntity<Object> exception (PassengerNotFoundException exception){
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(exception.getMessage());
+    }
 }
