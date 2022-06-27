@@ -1,6 +1,6 @@
 package service;
 
-import dto.request.flight.FindFlightInformationRequest;
+import dto.request.flight.GetFlightInformationRequest;
 import dto.request.flight.UpdateFlightRequest;
 import dto.request.flight.AddFlightRequest;
 import dto.response.flight.FlightResponse;
@@ -13,5 +13,5 @@ public interface FlightService {
     Optional<FlightResponse> removeFlightById (String id);
     Optional<FlightResponse> updateFlight (UpdateFlightRequest request);
     List<FlightResponse> findAll (int PageNo, int PageSize);
-    List<FlightResponse> findFlights (FindFlightInformationRequest request);
+    List<FlightResponse> findFlights (GetFlightInformationRequest request);
 }
