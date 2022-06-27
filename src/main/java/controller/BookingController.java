@@ -5,10 +5,7 @@ import dto.response.booking.BookingResponse;
 import jakarta.validation.Valid;
 import org.springframework.http.MediaType;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.context.annotation.RequestScope;
 
 import java.util.Optional;
@@ -27,6 +24,10 @@ public class BookingController {
     @PostMapping(value ="/add", produces = MediaType.APPLICATION_JSON_VALUE,consumes = MediaType.APPLICATION_JSON_VALUE)
     public Optional<BookingResponse> createBooking (@RequestBody @Valid AddBookingRequest request) {
         return BookingService.createBooking(request);
+    }
+    @DeleteMapping(value = "/delete/{customerId}")
+    public Optional<BookingResponse> deleteBookingById (@PathVariable String BookingId){
+        return BookingService.removeBookingById(BookingId);
     }
 
 
