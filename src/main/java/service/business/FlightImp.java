@@ -48,7 +48,7 @@ public class FlightImp implements FlightService {
     }
 
     @Override
-    public List<FlightResponse> findFlights(GetFlightInformationRequest request) {
+    public List<FlightResponse> findFlight(GetFlightInformationRequest request) {
         return null;
     }
 }
