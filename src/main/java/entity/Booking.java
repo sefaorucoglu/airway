@@ -12,5 +12,7 @@ public class Booking {
     @Id
     private String bookingID;
     private String flightNumber;
+    private String bookingDate;
+
 
 }

@@ -17,7 +17,8 @@ public class Passenger {
     private String IdentityNo;
     private String fullName;
     private String email;
+    private String password;
     private String phone;
     private String gender;
-    private int age;
+    private String birthDate;
 }

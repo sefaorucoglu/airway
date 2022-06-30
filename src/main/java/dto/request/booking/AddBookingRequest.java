@@ -1,14 +1,22 @@
 package dto.request.booking;
 
+import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
-import lombok.NoArgsConstructor;
+import validation.ValidDate;
 
 @Data
 @Builder
-@NoArgsConstructor
+@AllArgsConstructor
 public class AddBookingRequest {
+    @NotBlank
+    private String bookingID;
+    @NotBlank
+    private String flightNumber;
+    @NotBlank
+    @ValidDate
+    private String bookingDate;
 
 
 }
