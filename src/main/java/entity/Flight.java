@@ -12,10 +12,13 @@ public class Flight {
     private String from;
     private String to;
     private String flightDate;
+    
     private String boardingTime;
-    private String landingTime;
     @Enumerated(EnumType.ORDINAL)
     private Status Status;
+    @ManyToOne
+    @JoinColumn(name = "identity_no_flight_number")
+    private Passenger identityNo;
 
 
 

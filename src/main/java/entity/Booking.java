@@ -13,6 +13,8 @@ public class Booking {
     private String bookingID;
     private String flightNumber;
     private String bookingDate;
+    private String bookingStatus;
+    private String identityNo;
 
 
 }
