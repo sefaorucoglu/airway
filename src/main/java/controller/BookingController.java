@@ -40,7 +40,7 @@ public class BookingController {
     public Optional<BookingResponse> updateBooking (@RequestBody @Valid UpdateBookingRequest updateBookingRequest){
         return bookingService.updateBooking(updateBookingRequest);
     }
-    @PostMapping("/getBookings")
+    @PostMapping("/getBooking")
     public List<BookingResponse> findBooking (GetInformationBookingRequest request) {
         if (request.getIdentityNo().equals("")&&request.getBookingId().equals("")){
             throw new BookingNotFoundException("Inputs could not be empty.");

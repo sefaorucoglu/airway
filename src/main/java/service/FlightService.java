@@ -13,5 +13,5 @@ public interface FlightService {
     Optional<FlightResponse> removeFlightById (String id);
     Optional<FlightResponse> updateFlight (UpdateFlightRequest request);
     List<FlightResponse> findAll (int PageNo, int PageSize);
-    List<FlightResponse> findFlights (GetFlightInformationRequest request);
+    List<FlightResponse> findFlight(GetFlightInformationRequest request);
 }

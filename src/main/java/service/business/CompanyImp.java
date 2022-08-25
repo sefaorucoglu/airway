@@ -1,7 +1,7 @@
 package service.business;
 
 import dto.request.company.AddCompanyRequest;
-import dto.request.company.GetInformationCompanyRequest;
+import dto.request.company.GetCompanyInformationRequest;
 import dto.request.company.UpdateCompanyRequest;
 import dto.response.company.CompanyResponse;
 import exception.CompanyNotFoundException;
@@ -43,7 +43,7 @@ public class CompanyImp implements CompanyService {
     }
 
     @Override
-    public List<CompanyResponse> findCompany(GetInformationCompanyRequest request) {
+    public List<CompanyResponse> findCompany(GetCompanyInformationRequest request) {
         return null;
     }
 

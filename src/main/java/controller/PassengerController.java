@@ -45,7 +45,7 @@ public class PassengerController {
         return passengerService.updatePassenger(updateRequest);
     }
 
-    @PostMapping("/getCustomers")
+    @PostMapping("/getPassenger")
     public List<PassengerResponse> findPassenger(@RequestBody GetInformationPassengerRequest request){
         if (request.getEmail().equals("")&&request.getIdentityNo().equals("")){
             throw new PassengerNotFoundException("Input could not be empty.");

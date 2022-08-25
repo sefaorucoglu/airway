@@ -18,7 +18,7 @@ import java.util.List;
 import java.util.Optional;
 @RequestScope
 @RestController
-@RequestMapping("/Flights")
+@RequestMapping("/flights")
 @Validated
 public class FlightController {
     private final service.FlightService flightService;
@@ -40,17 +40,17 @@ public class FlightController {
     public Optional<FlightResponse> updateFlight (@RequestBody @Valid UpdateFlightRequest updateFlightRequest){
         return flightService.updateFlight(updateFlightRequest);
     }
-    @PostMapping("/getFlights")
-    public List<FlightResponse> findFlight (@RequestBody GetFlightInformationRequest request) {
+    @PostMapping("/getFlight")
+    public List<FlightResponse> findFlight(@RequestBody GetFlightInformationRequest request) {
         if (request.getFlightDate().equals("")&&request.getFlightNumber().equals("")&&request.getFlightDate().equals("")&&
         request.getFrom().equals("")&&request.getTo().equals("")&&request.getStatus().equals("")
         ){
             throw new FlightNotFoundException("Inputs could not be empty.");
         }
-        return flightService.findFlights(request);
+        return flightService.findFlight(request);
     }
     @GetMapping
-    public List<FlightResponse> findAllFlight (@RequestParam(defaultValue = "0",required = false) int pageNo,@RequestParam(defaultValue = "20",required = false) int pageSize){
+    public List<FlightResponse> findAllFlights (@RequestParam(defaultValue = "0",required = false) int pageNo,@RequestParam(defaultValue = "20",required = false) int pageSize){
         return flightService.findAll(pageNo,pageSize);
     }
     @ExceptionHandler(value = FlightNotFoundException.class)
